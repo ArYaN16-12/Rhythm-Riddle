@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music Quiz</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: url("/static/photo3.jpg") no-repeat center center fixed;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.quiz-box {
+    width: 450px;
+    background: #1e1e1e;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(255,255,255,0.2);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1); /* semi-transparent navbar */
+  backdrop-filter: blur(5px); /* blur effect */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+audio {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 6px;
+    background: #09282c;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+button:hover {
+    background: #0097a7;
+}
+</style>
+</head>
+
+<body>
+<div class="quiz-box">
+
+    <h2>Question {{ index }} / {{ total }}</h2>
+    <p>Listen and choose the correct song</p>
+
+    <!-- Audio player -->
+    <audio id="audioPlayer" controls autoplay>
+        <source src="{{ url_for('static', filename=q.song_path) }}" type="audio/mpeg">
+        Your browser does not support audio.
+    </audio>
+
+    <form method="POST">
+        {% for option in options %}
+        <button type="submit" name="option" value="{{ option }}">{{ option }}</button>
+        {% endfor %}
+    </form>
+
+</div>
+
+<script>
+// Stop audio after 40 seconds
+let audio = document.getElementById("audioPlayer");
+setTimeout(() => audio.pause(), 40000);
+</script>
+
+</body>
+</html>

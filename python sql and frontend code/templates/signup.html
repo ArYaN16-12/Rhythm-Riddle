@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style4.css') }}">
+</head>
+<body>
+  <div class="login-box">
+    <h2>Sign Up</h2>
+    <form method="POST" action="{{ url_for('signup') }}">
+      
+      <div class="input-box">
+        <input type="email" name="username" placeholder="Email" required>
+      </div>
+      <div class="input-box">
+        <input type="password" name="password" placeholder="Password" required>
+      </div>
+      <div class="input-box">
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+      </div>
+      
+      <button type="submit" class="btn signup-btn">Sign Up</button>
+    </form>
+
+  </div>
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const password = document.getElementById('new-password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+      const errorMsg = document.getElementById('signup-error-msg');
+
+      if (password !== confirmPassword) {
+        errorMsg.style.display = 'block';
+      } else {
+        errorMsg.style.display = 'none';
+        // Redirect to another page after successful signup
+        window.location.href = 'hom2.html';
+      }
+    });
+  </script>
+</body>
+
+</html>

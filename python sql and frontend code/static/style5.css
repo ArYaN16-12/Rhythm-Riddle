@@ -1,0 +1,62 @@
+
+/* Reset basic margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set the full height of body and html */
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("photo.jpg") no-repeat center center fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Style for the "RYTHEM RIDDLES" text */
+.genre-top {
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 3px 3px 10px black;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Style for the "What's your genre?" text */
+.center-text {
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 3px 3px 10px black;
+  margin-bottom: 40px;
+}
+
+/* Style for the language options (HINDI and ENGLISH) */
+.language {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 3px 3px 10px black;
+  position: absolute;
+  margin-bottom: 30px;
+}
+
+.left {
+  left: 30px;
+}
+
+.right {
+  right: 30px;
+}

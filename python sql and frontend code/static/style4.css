@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body with background and centering */
+body {
+  height: 100vh;
+   background: url("/static/img.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* Login box with blur and glassmorphism effect */
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.1); /* translucent background */
+  backdrop-filter: blur(10px); /* blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  text-align: center;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* subtle border */
+}
+
+/* Form title */
+.login-box h2 {
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+/* Input container */
+.input-box {
+  margin-bottom: 20px;
+}
+
+/* Input field styles */
+.input-box input {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+}
+
+/* Input focus */
+.input-box input:focus {
+  border: 2px solid #007bff;
+}
+
+/* Button style */
+.btn, .login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffcc00;
+  color: #000;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover, .login-btn:hover {
+  background-color: #e6b800;
+}
+
+/* Error message */
+.error-msg {
+  margin-top: 15px;
+  color: #ff6666;
+  font-size: 14px;
+  text-align: center;
+}
+
+

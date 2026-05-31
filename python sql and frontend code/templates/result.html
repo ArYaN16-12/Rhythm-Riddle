@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Result</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: url("{{ url_for('static', filename='photo5.jpg') }}") no-repeat center center fixed;
+    background-size: cover;
+        color: #020202;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .result-box {
+        background-color: rgba(255, 255, 255, 0.1); /* semi-transparent navbar */
+        backdrop-filter: blur(5px); /* blur effect */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        padding: 30px;
+        border-radius: 10px;
+        width: 400px;
+        text-align: center;
+        box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: #052a18;
+    }
+
+    .detail {
+        font-size: 18px;
+        margin: 12px 0;
+        background: rgba(255,255,255,0.08);
+        padding: 10px;
+        border-radius: 6px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+        background: #0e623a;
+        color: white;
+        margin-top: 20px;
+        font-size: 17px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background: #00c853;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="result-box">
+    <h2>🎵 Quiz Result</h2>
+
+    <div class="detail">👤 User ID: <strong>{{ session['user_id'] }}</strong></div>
+    <div class="detail">✅ Score: <strong>{{ score }}</strong></div>
+    <div class="detail">📊 Total Questions: <strong>{{ total }}</strong></div>
+    
+
+    <button class="btn" onclick="window.location.href='/'">Play Again</button>
+</div>
+
+</body>
+</html>
